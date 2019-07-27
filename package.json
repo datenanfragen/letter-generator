@@ -1,0 +1,27 @@
+{
+    "name": "letter-generator",
+    "version": "1.0.0",
+    "description": "Generate letters (plain text or PDF) from templates. Used by the Datenanfragen.de project.",
+    "main": "index.js",
+    "repository": "https://github.com/datenanfragen/letter-generator",
+    "author": "The Datenanfragen.de project <dev@datenanfragen.de> (https://www.datenanfragen.de)",
+    "contributors": [
+        {
+            "name": "Benjamin Altpeter",
+            "email": "hi@bn.al",
+            "url": "https://benjamin-altpeter.de"
+        },
+        {
+            "name": "Lorenz Sieben",
+            "email": "me@lorenz-sieben.com",
+            "url": "https://lorenz-sieben.com"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/datenanfragen/letter-generator/issues"
+    },
+    "dependencies": {
+        "pdfmake": "^0.1.58"
+    }
+}
