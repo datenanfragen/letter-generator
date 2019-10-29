@@ -81,7 +81,7 @@ export default class Letter {
                 return { text: signature.name, marginTop: mm2pt(2) };
             case 'image':
                 return [
-                    { image: signature.value, width: mm2pt(60), marginTop: mm2pt(5) },
+                    { image: signature.value, marginTop: mm2pt(5) },
                     { text: signature.name, marginTop: mm2pt(1) }
                 ];
             default:
