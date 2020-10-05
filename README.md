@@ -4,7 +4,7 @@
 
 ## Installation
 
-You can install this tools via npm:  
+You can install this tools via `yarn`:  
 
 ```sh
 yarn add letter-generator
@@ -91,4 +91,4 @@ We warmly welcome issues and pull requests through GitHub.
 
 Please be aware that by contributing, you agree for your work to be released under the MIT license, as specified in the LICENSE file.  
 
-If you are interested in contributing in other ways besides coding, we can also really use your help. Have a look at our contribute page for more details.  
+If you are interested in contributing in other ways besides coding, we can also really use your help. Have a look at [our contribute page](https://datarequests.org/contribute) for more details.  
