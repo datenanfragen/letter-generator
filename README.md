@@ -12,7 +12,7 @@ yarn add letter-generator
 
 ## Usage  
 
-### 1 - Create a template
+### 1. Create a template
 
 You can use a template to generate your text with variables and flags 
 
@@ -33,7 +33,7 @@ const template = new Template(templateText, flags, variables);
 const content = template.getText();
 ```
 
-### 2 - Creating a Letter
+### 2. Creating a Letter
 
 You'll have to pass an object to the letter constructor containing those informations:  
 
@@ -62,7 +62,7 @@ const props = {
 }
 ```
 
-### 3 - Rendering the Letter
+### 3. Rendering the Letter
 
 You can now create the letter object and use it:  
 The default layout is the [DIN 5008-a](https://en.wikipedia.org/wiki/DIN_5008) layout  
