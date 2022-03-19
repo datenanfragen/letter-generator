@@ -2,7 +2,8 @@
     "name": "letter-generator",
     "version": "1.0.1",
     "description": "Generate letters (plain text or PDF) from templates. Used by the Datenanfragen.de project.",
-    "main": "index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "repository": "https://github.com/datenanfragen/letter-generator",
     "author": "The Datenanfragen.de project <dev@datenanfragen.de> (https://www.datenanfragen.de)",
     "contributors": [
@@ -21,7 +22,42 @@
     "bugs": {
         "url": "https://github.com/datenanfragen/letter-generator/issues"
     },
+    "scripts": {
+        "prepack": "rm -rf dist && yarn build",
+        "build": "tsc",
+        "watch": "tsc -w",
+        "test": "echo 'TODO: No test specified yet.'"
+    },
+    "files": [
+        "/dist"
+    ],
     "dependencies": {
         "pdfmake": "^0.1.58"
+    },
+    "devDependencies": {
+        "@types/pdfmake": "^0.1.21",
+        "@typescript-eslint/eslint-plugin": "^5.15.0",
+        "@typescript-eslint/parser": "^5.15.0",
+        "eslint": "^8.11.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-import": "^2.25.4",
+        "husky": "4.3.7",
+        "lint-staged": "^12.3.7",
+        "prettier": "^2.6.0",
+        "typescript": "^4.6.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,js,scss,json}": [
+            "prettier --write"
+        ],
+        "*.{ts,js}": [
+            "eslint --fix"
+        ]
     }
 }
