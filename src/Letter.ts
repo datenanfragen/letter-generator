@@ -3,7 +3,7 @@ import { layout as dinLayoutFunction } from './layouts/din-5008-a';
 import { formatAddress, mm2pt, stripTags, applyFunctionToPdfMakeContent } from './utility';
 import type { LayoutFunction, PdfMakeContent, Signature } from './types';
 
-type LetterProps = {
+export type LetterProps = {
     sender_address: string[] | string;
     recipient_address: string[] | string;
     /** The information block usually displayed at the top-right of the letter. */
