@@ -1,6 +1,6 @@
 {
     "name": "letter-generator",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Generate letters (plain text or PDF) from templates. Used by the Datenanfragen.de project.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
