@@ -18,19 +18,24 @@ You can use a template to generate your text with variables and flags
 
 ```js
 // The text contains the static text, flags and variables
-// The flags should follow this form: [flag_name>The text contained in the flag]
 // The variables should follow this form: {variable_name}
-const templateText = "Here is a wonderful template [flag_1>I don't want this to be printed out] \n Checkout the {webpage} website! \n[flag_2>I want this to be printed out]";
+// The flags should follow this form: [flag_name>The text contained in the flag]
+// In addition to your manually defined flags, for each variable var_name, a flag has:var_name will be added
+// automatically and set to whether the variable is set and non-empty.
+const templateText = "Here is a wonderful template.[flag_1> I don't want this to be printed out.][has:webpage>\nCheck out the {webpage} website!]\n[flag_2>I want this to be printed out.]";
 
 // You should map the flag_name used in the template text with their visibilities (Boolean)
 const flags = { flag_1: false, flag_2: true };
 
 // You should map the variable_name used in the template text with their values
-const variables = {webpage: 'datenanfragen.de'};
+const variables = { webpage: 'Datenanfragen.de' };
 
 // Create the template from our values and generate the output text as string
 const template = new Template(templateText, flags, variables);
-const content = template.getText();
+console.log(template.getText());
+// Here is a wonderful template.
+// Check out the Datenanfragen.de website!
+// I want this to be printed out.
 ```
 
 ### 2 - Creating a Letter

@@ -31,3 +31,17 @@ const _stripTags = (text: string) => text.replace(/<.+?>/gmu, '');
  *       that doesn't matter too much since the tag stripping is only for aesthetic purposes and not for security.
  */
 export const stripTags = (text: PdfMakeContent): PdfMakeContent => applyFunctionToPdfMakeContent(text, _stripTags);
+
+/**
+ * Polyfill for `String.prototype.matchAll()`.
+ *
+ * Adapted after: https://stackoverflow.com/a/67807955 and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#finding_successive_matches
+ */
+export const matchAll = (re: RegExp, str: string): RegExpExecArray[] => {
+    let match;
+    const matches = [];
+
+    while ((match = re.exec(str)) !== null) matches.push(match);
+
+    return matches;
+};
