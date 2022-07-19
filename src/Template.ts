@@ -48,7 +48,7 @@ export class Template {
 
         // Replace the variables set by the user.
         for (const variable in this.variables) {
-            result = result.replace('{' + variable + '}', this.variables[variable]);
+            result = result.replace(new RegExp('{' + variable + '}', 'g'), this.variables[variable]);
         }
 
         return result;
