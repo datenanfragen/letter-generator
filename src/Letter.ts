@@ -65,7 +65,7 @@ export class Letter {
     /** Render the letter as a string, used e.g. for emails. */
     toString() {
         const information_block = Array.isArray(this.props.information_block)
-            ? this.props.information_block.join('\n')
+            ? this.props.information_block.filter((e) => typeof e === 'string').join('\n')
             : this.props.information_block;
         return information_block + '\n\n' + stripTags(this.props.content) + '\n' + this.props.signature['name'];
     }
