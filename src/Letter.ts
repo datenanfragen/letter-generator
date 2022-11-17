@@ -12,8 +12,8 @@ export type LetterProps = {
     content: PdfMakeContent;
     signature: Signature;
 };
-// The `marginTop` is missing in the type definitions.
-type PdfMakeSignature = (ContentText | ContentImage) & { marginTop: number };
+// `marginTop` and `maxWidth` are missing in the type definitions.
+type PdfMakeSignature = (ContentText | ContentImage) & { marginTop?: number; maxWidth?: number };
 
 const _parseTags = (content: string) => {
     if (!content) return [];
@@ -96,7 +96,7 @@ export class Letter {
                 return { text: signature.name, marginTop: mm2pt(2) };
             case 'image':
                 return [
-                    { image: signature.value, marginTop: mm2pt(5) },
+                    { image: signature.value, maxWidth: mm2pt(60), marginTop: mm2pt(5) },
                     ...(signature.name ? [{ text: signature.name, marginTop: mm2pt(1) }] : []),
                 ];
         }
